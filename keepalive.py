@@ -10,3 +10,7 @@ class keepalive(znc.Module):
     def OnIRCConnected(self):
         timer = self.CreateTimer(testtimer, interval=4, cycles=1, description='Says "foo bar" after 4 seconds')
         timer.msg = 'bar'
+        return znc.CONTINUE
+    def OnChanMsg(self, nick, channel, message):
+        self.PutModule("Hey, {0} said {1} on {2}".format(nick.GetNick(), message.s, channel.GetName()))
+        return znc.CONTINUE
