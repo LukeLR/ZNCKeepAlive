@@ -1,3 +1,3 @@
 # ZNCKeepAlive
-**A keep alive module for the znc bouncer**
+*A keep alive module for the znc bouncer*
 
