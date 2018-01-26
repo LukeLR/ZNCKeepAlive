@@ -13,6 +13,6 @@ class keepalive(znc.Module):
         return znc.CONTINUE
     def OnChanMsg(self, nick, channel, message):
         self.PutModule("Hey, {0} said {1} on {2}".format(nick.GetNick(), message.s, channel.GetName()))
-         timer = self.CreateTimer(pingtimer, interval=4, cycles=2, description='Says "foo bar" twice after 4 seconds')
+        timer = self.CreateTimer(pingtimer, interval=4, cycles=2, description='Says "foo bar" twice after 4 seconds')
         timer.msg = 'chan'
         return znc.CONTINUE
