@@ -2,7 +2,7 @@ import znc
 
 class pingtimer(znc.Timer):
     def RunJob(self):
-        self.GetModule().PutStatus('foo {0}'.format(self.msg))
+        self.GetModule().PutModule('foo {0}'.format(self.msg))
 
 class keepalive(znc.Module):
     description = "Keep connections through NAT to idle IRC networks alive."
