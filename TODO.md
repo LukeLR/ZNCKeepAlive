@@ -1,5 +1,5 @@
 # TODO
-[ ] Make interval customizable (parameter in Webconfig?)
+ [ ] Make interval customizable (parameter in Webconfig?)
 
 [ ] Make command customizable (parameter?)
 [ ] Use something like `ping` or `pong` as default (instead of `version`)
