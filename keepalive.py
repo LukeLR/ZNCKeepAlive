@@ -2,17 +2,14 @@ import znc
 
 class pingtimer(znc.Timer):
     def RunJob(self):
-        self.GetModule().PutModule('foo {0}'.format(self.msg))
+        self.GetModule().PutModule('Sending /ping number {0} to IRC network...'.format(self.counter))
+        self.GetModule().PutIRC('/ping')
+        self.counter = self.counter + 1
 
 class keepalive(znc.Module):
     description = "Keep connections through NAT to idle IRC networks alive."
     module_types = [znc.CModInfo.NetworkModule,znc.CModInfo.GlobalModule,znc.CModInfo.UserModule]
     def OnIRCConnected(self):
-        timer = self.CreateTimer(pingtimer, interval=4, cycles=2, description='Says "foo bar" twice after 4 seconds')
-        timer.msg = 'bar'
+        timer = self.CreateTimer(pingtimer, interval=4, cycles=0, description='Sends ping command to IRC network.')
+        timer.counter=0
         return znc.CONTINUE
-#    def OnChanMsg(self, nick, channel, message):
-#        self.PutModule("Hey, {0} said {1} on {2}".format(nick.GetNick(), message.s, channel.GetName()))
-#        timer = self.CreateTimer(pingtimer, interval=4, cycles=2, description='Says "foo bar" twice after 4 seconds')
-#        timer.msg = 'chan'
-#        return znc.CONTINUE
