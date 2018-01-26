@@ -9,7 +9,11 @@ class pingtimer(znc.Timer):
 class keepalive(znc.Module):
     description = "Keep connections through NAT to idle IRC networks alive."
     module_types = [znc.CModInfo.NetworkModule,znc.CModInfo.GlobalModule,znc.CModInfo.UserModule]
-    def OnIRCConnected(self):
+#    def OnIRCConnected(self):
+#        timer = self.CreateTimer(pingtimer, interval=5, cycles=0, description='Sends version command to IRC network.')
+#        timer.counter=0
+#        return znc.CONTINUE
+    def OnLoad(self):
         timer = self.CreateTimer(pingtimer, interval=5, cycles=0, description='Sends version command to IRC network.')
         timer.counter=0
         return znc.CONTINUE
