@@ -13,7 +13,7 @@ class keepalive(znc.Module):
 #        timer = self.CreateTimer(pingtimer, interval=5, cycles=0, description='Sends version command to IRC network.')
 #        timer.counter=0
 #        return znc.CONTINUE
-    def OnLoad(self):
+    def OnLoad(self, args, message):
         timer = self.CreateTimer(pingtimer, interval=5, cycles=0, description='Sends version command to IRC network.')
         timer.counter=0
         return znc.CONTINUE
