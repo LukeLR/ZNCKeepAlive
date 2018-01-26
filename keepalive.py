@@ -6,7 +6,7 @@ class pingtimer(znc.Timer):
 
 class keepalive(znc.Module):
     description = "Keep connections through NAT to idle IRC networks alive."
-    module_types = [znc.CModInfo.GlobalModule,znc.CModInfo.UserModule,znc.CModInfo.NetworkModule]
+    module_types = [znc.CModInfo.NetworkModule,znc.CModInfo.GlobalModule,znc.CModInfo.UserModule]
     def OnIRCConnected(self):
         timer = self.CreateTimer(pingtimer, interval=4, cycles=2, description='Says "foo bar" twice after 4 seconds')
         timer.msg = 'bar'
