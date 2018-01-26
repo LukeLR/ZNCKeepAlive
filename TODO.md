@@ -1,4 +1,4 @@
-# TODO
+# ZNCKeepAlive TODO
 TODO List for ZNCKeepAlive. Not necessarily in order of importance :wink:
 - [ ] Make interval customizable (parameter inWebconfig?)
 - [ ] Make command customizable (parameter?)
