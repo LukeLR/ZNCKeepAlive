@@ -6,3 +6,4 @@ TODO List for ZNCKeepAlive. Not necessarily in order of importance :wink:
 - [ ] Use something like `ping` or `pong` as default (instead of `version`)
 - [ ] Command line interface: Start / Stop Service automatically, without having to reconnect to the network
 - [ ] Start service on module load
+- [ ] Test whether this fixes the disconnects from hackint
